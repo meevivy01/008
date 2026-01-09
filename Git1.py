@@ -269,7 +269,7 @@ class JobThaiRowScraper:
                 # กดเมนูเข้าสู่ระบบ
                 login_menu = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="menu-jobseeker-login"]')))
                 self.driver.execute_script("arguments[0].click();", login_menu)
-                self.random_sleep(2, 3) 
+                self.random_sleep(2, 4) 
                 
                 # กดแท็บ Employer
                 employer_tab = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="login_tab_employer"]')))
@@ -277,7 +277,7 @@ class JobThaiRowScraper:
                 time.sleep(1)
                 self.driver.execute_script("arguments[0].click();", employer_tab)
                 console.print("   👉 กดสลับแท็บ Employer สำเร็จ (รอ 5 วิ...)", style="dim")
-                time.sleep(5)
+                time.sleep(7)
             except Exception as e:
                 console.print(f"   ⚠️ กดเมนูไม่สำเร็จ (อาจจะอยู่หน้านั้นแล้ว): {e}", style="warning")
 
